@@ -30,8 +30,10 @@ itself.
 */
 #include <iostream>
 #include <vector>
+#include "leetcode.hpp"
 
-int numberOfArithmeticSlices(const std::vector<int> &A) {
+int ArithmeticSlicesProblem::numberOfArithmeticSlices(
+    const std::vector<int> &A) {
   auto diff = 0;
   auto cand_total = 0;
   auto len = 0;
@@ -52,8 +54,8 @@ int numberOfArithmeticSlices(const std::vector<int> &A) {
   return (cand_total == 0 ? len : len += cand_total * (cand_total + 1) / 2);
 }
 
-int main(int argc, char const *argv[]) {
+bool ArithmeticSlicesProblem::test() {
   auto t0 = {1, 2, 3, 4, 5};
   std::cout << numberOfArithmeticSlices(t0) << '\n';
-  return 0;
+  return true;
 }

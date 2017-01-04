@@ -27,18 +27,18 @@ Input:
 Output:
 "ffffffff"
 */
-
 #include <algorithm>
 #include <climits>
 #include <cstdint>
 #include <iostream>
 #include <sstream>
 #include <string>
+#include "leetcode.hpp"
 
 constexpr char hex_table[] = {'0', '1', '2', '3', '4', '5', '6', '7',
                               '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
-std::string toHex(int num) {
+std::string HexStringProblem::toHex(int num) {
   std::stringstream ss;
   int32_t hex_div = static_cast<int32_t>(num);
   auto hex_res = 0;
@@ -63,10 +63,10 @@ std::string toHex(int num) {
   return out_str;
 }
 
-int main(int argc, char const *argv[]) {
+bool HexStringProblem::test() {
   std::cout << "The number 16 in hex is " << toHex(16) << '\n';
   std::cout << "The number 11 in hex is " << toHex(11) << '\n';
   std::cout << "The number 5200 in hex is " << toHex(5200) << '\n';
   std::cout << "The number -2 in hex is " << toHex(-2) << '\n';
-  return 0;
+  return true;
 }

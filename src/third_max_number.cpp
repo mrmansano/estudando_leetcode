@@ -28,23 +28,9 @@ Both numbers with value 2 are both considered as second maximum.
 #include <algorithm>
 #include <iostream>
 #include <vector>
+#include "leetcode.hpp"
 
-template <typename T> void printVector(std::vector<T> &&in_arr) {
-  for (auto &i : in_arr) {
-    std::cout << i << " ";
-  }
-  std::cout << '\n';
-}
-
-template <typename T> T thirdMaxNumber(std::vector<T> &&in_arr) {
-  auto flt_vec = in_arr;
-  std::sort(flt_vec.begin(), flt_vec.end());
-  flt_vec.erase(std::unique(flt_vec.begin(), flt_vec.end()), flt_vec.end());
-  printVector(std::move(flt_vec));
-  return (flt_vec.size() < 3 ? *(flt_vec.end() - 1) : *(flt_vec.end() - 3));
-}
-
-int main(int argc, char const *argv[]) {
+bool ThirdMaxNumberProblem::test() {
   auto t0 = {1, 2, 3};
   auto t1 = {3, 2, 1};
   auto t2 = {1, 8};

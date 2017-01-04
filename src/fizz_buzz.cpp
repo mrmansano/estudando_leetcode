@@ -28,23 +28,17 @@ Return:
     "FizzBuzz"
 ]
 */
-
 #include <algorithm>
 #include <iostream>
 #include <numeric>
 #include <sstream>
 #include <vector>
+#include "leetcode.hpp"
 
 constexpr auto kFizz = "Fizz";
 constexpr auto kBuzz = "Buzz";
 
-void printVector(std::vector<std::string> v) {
-  for (auto s : v) {
-    std::cout << s << '\n';
-  }
-}
-
-std::vector<std::string> fizzBuzz(int n) {
+std::vector<std::string> FizzBuzzProblem::fizzBuzz(int n) {
   std::vector<std::string> out_vec;
   std::vector<int> nums(n);
   std::iota(nums.begin(), nums.end(), 1);
@@ -68,7 +62,7 @@ std::vector<std::string> fizzBuzz(int n) {
   return out_vec;
 }
 
-int main(int argc, char const *argv[]) {
+bool FizzBuzzProblem::test() {
   printVector(fizzBuzz(15));
-  return 0;
+  return true;
 }

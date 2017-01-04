@@ -18,12 +18,12 @@ Output:
 Explanation:
 One longest palindrome that can be built is "dccaccd", whose length is 7.
 */
-
 #include <iostream>
 #include <map>
 #include <string>
+#include "leetcode.hpp"
 
-int longestPalindrome(std::string &&s) {
+int LongestPalindromeProblem::longestPalindrome(std::string &&s) {
   auto count = 0;
   auto singles = 0;
   std::map<char, int> char_count;
@@ -39,14 +39,13 @@ int longestPalindrome(std::string &&s) {
     count += p.second - (p.second % 2);
   }
 
-  if (count > 0 && singles > 0)
-    count += 1;
+  if (count > 0 && singles > 0) count += 1;
 
   return count;
 }
 
-int main(int argc, char const *argv[]) {
+bool LongestPalindromeProblem::test() {
   std::cout << "Test1 = " << longestPalindrome("abccccdd") << '\n';
   std::cout << "Test2 = " << longestPalindrome("abcccdd") << '\n';
-  return 0;
+  return true;
 }
